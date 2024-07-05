@@ -1,5 +1,11 @@
 const express = require("express");
 const app = express();
+const moviesRouter = require("./routes/movies.router");
+
+// Middleware para parsear el cuerpo de las peticiones como JSON
+app.use(express.json());
+// Usa el router de películas en la ruta /movies
+app.use("/movies", moviesRouter);
 
 const path = require("path");
 
@@ -9,11 +15,7 @@ app.get("/", (req, res) => {
 
 app.use(express.static(path.join(__dirname, "public")));
 
-app.use(express.static('public'))
-
-
-
-
+app.use(express.static("public"));
 
 app.get("/factura", (req, res) => {
   // Login
@@ -32,4 +34,6 @@ app.get("/productos/:id", (req, res) => {
 
 const PORT = 3000;
 
-app.listen(PORT, () => console.log(`http://localhost:${PORT}`));
+app.listen(PORT, () => {
+  console.log(`http://localhost:${PORT}`);
+});
