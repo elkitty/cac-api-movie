@@ -3,11 +3,17 @@ const app = express();
 
 const path = require("path");
 
+app.get("/", (req, res) => {
+  res.send("Hola desde Express!!!");
+});
+
 app.use(express.static(path.join(__dirname, "public")));
 
-app.get("/", (req, res) => {
-  res.send("Hola desde Express!!");
-});
+app.use(express.static('public'))
+
+
+
+
 
 app.get("/factura", (req, res) => {
   // Login
