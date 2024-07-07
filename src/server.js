@@ -1,6 +1,8 @@
 // src/app.js
 const express = require("express");
-const moviesRouter = require("./routes/movies.router");
+const moviesRouter = require("../routes/movieRouter");
+
+require("dotenv").config();
 
 const app = express();
 
@@ -9,7 +11,7 @@ app.use(express.json());
 // Usa el router de películas en la ruta /movies
 app.use("/movies", moviesRouter);
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3001;
 
 app.listen(PORT, () => {
   console.log(`http://localhost:${PORT}`);

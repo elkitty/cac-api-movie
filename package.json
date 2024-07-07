@@ -2,16 +2,17 @@
   "name": "express-api-24129",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
+  "main": "src/server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js",
-    "dev": "nodemon server.js",
-    "watch": "node --watch server.js"
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
+    "watch": "node --watch src/server.js"
   },
   "author": "CaC",
   "license": "MIT",
   "dependencies": {
+    "dotenv": "^16.4.5",
     "express": "^4.19.2",
     "mysql2": "^3.10.2"
   },
